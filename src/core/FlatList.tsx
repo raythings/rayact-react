@@ -1,5 +1,7 @@
 import React, { useMemo, useState } from 'react';
-import { ScrollView, View } from '../index';
+// Import from the concrete module, not the './index' barrel — FlatList is
+// re-exported by index, so routing through the barrel forms an import cycle.
+import { ScrollView, View } from '../components';
 
 export type FlatListProps<T> = {
   data: T[];
